@@ -29,3 +29,23 @@ git merge feature
 ```
 git merge --squash feature
 ```
+
+使用 `git checkout`命令回退到那个版本。你只需要把 `<commit_id>`替换为你找到的那个commit id。
+
+```
+git checkout 
+```
+
+如果你想要在回退后的版本上创建一个新的分支，你可以用以下命令
+
+```
+git checkout -b 
+```
+
+注意，使用 `git checkout`来回退版本会使你处于一个"detached HEAD"的状态。在这个状态下，如果你做了任何修改并commit，那么当你切换回原来的分支时，那些修改将会丢失。如果你想保留这些修改，你应该在 `git checkout <commit_id>`之后创建一个新的分支。
+
+如果你想把你的HEAD和一个分支的tip都回退到之前的版本，并把后续的commit都删除，你可以使用 `git reset --hard <commit_id>`命令。请谨慎使用这个命令，因为这个操作是不可逆的，你将无法恢复删除的commit。
+
+```
+git reset --hard 
+```
