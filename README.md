@@ -49,3 +49,17 @@ git checkout -b
 ```
 git reset --hard 
 ```
+
+
+用于将你的本地代码推送到GitHub或其他托管Git代码的远程仓库。下面是详细解释：
+
+* `git push`： 这是基础的git命令，用于将你本地仓库的变更推送到远程仓库。
+* `--set-upstream`： 这个参数用于设置远程跟踪分支。当设置后，未来只需使用 `git push` 或 `git pull` 命令，Git 就会知道你希望与哪个分支进行交互。
+* `origin`： 通常，origin 是你克隆远程仓库时自动设置的默认名称。它代表了原始的远程仓库地址。
+* `shopee2`： 这是你要推送的本地分支的名称。
+
+总结一下，这条命令的意思就是“将本地的 'shopee2' 分支推送到名为 'origin' 的远程仓库，并设置 'origin' 的 'shopee2' 分支作为 'shopee2' 分支的上游（即默认远程分支）。” 如果远程 'origin' 仓库不存在 'shopee2' 分支，那么将会创建一个。
+
+```
+git push --set-upstream origin shopee2
+```
